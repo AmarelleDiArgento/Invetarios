@@ -101,6 +101,7 @@
                     lista = iL.lista();
 
                 } catch (Exception e) {
+                    System.out.print("Conexion: " + e.toString());
             %>
             <h5 style="color: #8b1014">
                 <%="Error: " + e%>
