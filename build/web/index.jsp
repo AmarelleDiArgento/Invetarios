@@ -22,11 +22,6 @@
         <script src="js/datatable/jquery.dataTables.min.js"></script>
 
         <script>
-
-
-
-
-
             $(document).ready(function () {
 
                 $('#datos thead tr').clone(true).appendTo('#datos thead');
@@ -80,10 +75,8 @@
                 $('select').material_select();
 
             });
-
-
-
         </script>
+        
     </head>
     <body>
 
@@ -92,6 +85,15 @@
                 <h1> 
                     Inventarios
                 </h1>
+                
+                <div class="container">
+                    <ul id="nav-mobile" className="right hide-on-med-and-down">
+                        <li><a href="index.jsp" class="btn black">color</a>
+                        <a href="variedad.jsp" class="btn  blue darken-1">variedad</a>
+                        <a href="grado.jsp" class="btn  blue darken-1">grado</a></li>
+                    </ul>
+                </div>
+
 
             </div>
             <%

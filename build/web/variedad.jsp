@@ -1,3 +1,5 @@
+<%@page import="Modelo.iLocaliza1"%>
+<%@page import="Modelo.Tab.localiza1"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="Modelo.Tab.localiza"%>
@@ -85,21 +87,21 @@
                 <h1> 
                     Inventarios
                 </h1>
-                
+
                 <div class="container">
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        <li><a href="index.jsp" class="btn black">color</a>
-                        <a href="variedad.jsp" class="btn  blue darken-1">variedad</a>
+                        <li><a href="index.jsp" class="btn blue darken-1">color</a>
+                        <a href="variedad.jsp" class="btn  black">variedad</a>
                         <a href="grado.jsp" class="btn  blue darken-1">grado</a></li>
                     </ul>
                 </div>
 
-
+                
             </div>
             <%
-                List<localiza> lista = new ArrayList<>();
+                List<localiza1> lista = new ArrayList<>();
                 try {
-                    iLocaliza iL = new iLocaliza();
+                    iLocaliza1 iL = new iLocaliza1();
                     lista = iL.lista();
 
                 } catch (Exception e) {
@@ -118,7 +120,7 @@
                 <thead class="blue-grey lighten-4">
                     <tr>
                         <th>Producto</th>
-                        <th>Color</th>
+                        <th>Variedad</th>
                         <th>Ingreso</th>
                         <th>Ubicacion</th>
                         <th>Seriales</th>
@@ -127,7 +129,8 @@
                 </thead>
 
                 <tbody>
-                    <%                    for (localiza l : lista) {
+                    <%
+                    for (localiza1 l : lista) {
                     %>
 
 

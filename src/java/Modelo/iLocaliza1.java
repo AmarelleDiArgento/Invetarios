@@ -8,6 +8,7 @@ package Modelo;
 import java.sql.Connection;
 import Conexion.Conexion;
 import Modelo.Tab.localiza;
+import Modelo.Tab.localiza1;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,7 +19,7 @@ import java.util.List;
  *
  * @author almoreno
  */
-public class iLocaliza extends Conexion {
+public class iLocaliza1 extends Conexion {
 
     PreparedStatement ps = null;
     ResultSet rs = null;
@@ -42,7 +43,7 @@ public class iLocaliza extends Conexion {
         return false;
     }
 
-    public List<localiza> lista() throws SQLException {
+    public List<localiza1> lista() throws SQLException {
 
         String md = "CREATE TABLE #t(\n" +
                     "idPostcosecha int	,\n" +
@@ -92,14 +93,14 @@ public class iLocaliza extends Conexion {
                     "INSERT INTO #t exec [FDIM].[INV].[PA_ReporteInventario] '342','2','0','0','0','-999','-999',null ;\n" +
                     "\n" +
                     "\n" +
-                    "select Producto, Color, FechaPrimerIngreso Ingreso, Ubicacion, count(distinct Serial) Seriales, sum(TotalTallos) Tallos\n" +
+                    "select Producto, Variedad, FechaPrimerIngreso Ingreso, Ubicacion, count(distinct Serial) Seriales, sum(TotalTallos) Tallos\n" +
                     "from #t \n" +
-                    "group by Producto, Color, FechaPrimerIngreso, Ubicacion\n" +
-                    "order by Producto, Color, FechaPrimerIngreso;\n" +
+                    "group by Producto, Variedad, FechaPrimerIngreso, Ubicacion\n" +
+                    "order by Producto, Variedad, FechaPrimerIngreso;\n" +
                     "\n" +
                     "drop table #t;";
 
-        List<localiza> data = new ArrayList<>();
+        List<localiza1> data = new ArrayList<>();
 
         Connection cn = getCondb1();
         //cn.setAutoCommit(false);
@@ -122,10 +123,10 @@ public class iLocaliza extends Conexion {
         return data;
     }
 
-    public localiza convertirLocaliza(ResultSet rs) throws SQLException {
-        localiza l = new localiza();
+    public localiza1 convertirLocaliza(ResultSet rs) throws SQLException {
+        localiza1 l = new localiza1();
         l.setProducto(rs.getString("Producto"));
-        l.setColor(rs.getString("Color"));
+        l.setColor(rs.getString("Variedad"));
         l.setIngreso(rs.getDate("Ingreso"));
         l.setUbicacion(rs.getString("Ubicacion"));
         l.setSeriales(rs.getInt("Seriales"));

@@ -1,3 +1,5 @@
+<%@page import="Modelo.iLocaliza2"%>
+<%@page import="Modelo.Tab.localiza2"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="Modelo.Tab.localiza"%>
@@ -88,18 +90,17 @@
                 
                 <div class="container">
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        <li><a href="index.jsp" class="btn black">color</a>
+                        <li><a href="index.jsp" class="btn blue darken-1">color</a>
                         <a href="variedad.jsp" class="btn  blue darken-1">variedad</a>
-                        <a href="grado.jsp" class="btn  blue darken-1">grado</a></li>
+                        <a href="grado.jsp" class="btn  black">grado</a></li>
                     </ul>
                 </div>
 
-
             </div>
             <%
-                List<localiza> lista = new ArrayList<>();
+                List<localiza2> lista = new ArrayList<>();
                 try {
-                    iLocaliza iL = new iLocaliza();
+                    iLocaliza2 iL = new iLocaliza2();
                     lista = iL.lista();
 
                 } catch (Exception e) {
@@ -118,7 +119,8 @@
                 <thead class="blue-grey lighten-4">
                     <tr>
                         <th>Producto</th>
-                        <th>Color</th>
+                        <th>Variedad</th>
+                        <th>Grado</th>
                         <th>Ingreso</th>
                         <th>Ubicacion</th>
                         <th>Seriales</th>
@@ -127,13 +129,14 @@
                 </thead>
 
                 <tbody>
-                    <%                    for (localiza l : lista) {
+                    <%for (localiza2 l : lista) {
                     %>
 
 
                     <tr>
                         <td><%= l.getProducto()%></td>
-                        <td><%= l.getColor()%></td>
+                        <td><%= l.getVariedad()%></td>
+                        <td><%= l.getGrado()%></td>
                         <td><%= l.getIngreso()%></td>
                         <td><%= l.getUbicacion()%></td>
                         <td class="center center"><%= l.getSeriales()%></td>

@@ -3,12 +3,14 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import Modelo.iLocaliza1;
+import Modelo.Tab.localiza1;
 import java.util.ArrayList;
 import java.util.List;
 import Modelo.Tab.localiza;
 import Modelo.iLocaliza;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class variedad_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -49,6 +51,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html lang=\"en\">\r\n");
       out.write("    <head>\r\n");
@@ -69,6 +73,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <script src=\"js/datatable/jquery.dataTables.min.js\"></script>\r\n");
       out.write("\r\n");
       out.write("        <script>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("            $(document).ready(function () {\r\n");
       out.write("\r\n");
       out.write("                $('#datos thead tr').clone(true).appendTo('#datos thead');\r\n");
@@ -122,8 +131,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                $('select').material_select();\r\n");
       out.write("\r\n");
       out.write("            });\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        </script>\r\n");
-      out.write("        \r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("\r\n");
@@ -132,22 +143,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <h1> \r\n");
       out.write("                    Inventarios\r\n");
       out.write("                </h1>\r\n");
-      out.write("                \r\n");
-      out.write("                <div class=\"container\">\r\n");
-      out.write("                    <ul id=\"nav-mobile\" className=\"right hide-on-med-and-down\">\r\n");
-      out.write("                        <li><a href=\"index.jsp\" class=\"btn black\">color</a>\r\n");
-      out.write("                        <a href=\"variedad.jsp\" class=\"btn  blue darken-1\">variedad</a>\r\n");
-      out.write("                        <a href=\"grado.jsp\" class=\"btn  blue darken-1\">grado</a></li>\r\n");
-      out.write("                    </ul>\r\n");
-      out.write("                </div>\r\n");
-      out.write("\r\n");
       out.write("\r\n");
       out.write("            </div>\r\n");
       out.write("            ");
 
-                List<localiza> lista = new ArrayList<>();
+                List<localiza1> lista = new ArrayList<>();
                 try {
-                    iLocaliza iL = new iLocaliza();
+                    iLocaliza1 iL = new iLocaliza1();
                     lista = iL.lista();
 
                 } catch (Exception e) {
@@ -181,7 +183,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                <tbody>\r\n");
       out.write("                    ");
-                    for (localiza l : lista) {
+
+                    for (localiza1 l : lista) {
                     
       out.write("\r\n");
       out.write("\r\n");
