@@ -78,7 +78,7 @@ public class iLocaliza extends Conexion {
                     "Marca varchar(max)	,\n" +
                     "Finca varchar(max)	,\n" +
                     "Ubicacion varchar(max)	,\n" +
-                    "Pedido int	,\n" +
+                    "Pedido varchar(max)	,\n" +
                     "Item int	,\n" +
                     "idReceta int	,\n" +
                     "Cliente varchar(max)	,\n" +
