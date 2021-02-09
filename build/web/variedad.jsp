@@ -161,9 +161,5 @@
             %>
 
         </div>
-
-        <!--  Scripts-->
-
-
     </body>
 </html>
